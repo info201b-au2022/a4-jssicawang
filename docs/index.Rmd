@@ -1,45 +1,43 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "Revealing Patterns of Inequalities in the American Jail System"
+author: "Jessica Wang"
+date: '2022-11-21'
 output: html_document
 ---
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
+chooseCRANmirror(graphics = FALSE, ind = 1)
 source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+Throughout American history, incarceration has been a topic of much discourse. Many people have problems with the way the system is set up, and numerous efforts have been made throughout the years to correct these problems. At the same time, reform will not be enough until societal prejudices are removed. 
 
 ## Introduction 
-[TODO]
+Justice cannot be served until equality is achieved in the way that people are convicted of crimes. Studies show that black people are, on average, five times more likely to be arrested than white people. This number is supported by the following analysis of decades of incarceration trends data gathered by the Vera Institute, as throughout the years, black people are consistently incarcerated at a higher rate than white people.
+For the people and organizations, such as Black Lives Matter, who have been advocating for this point for years, this analysis serves as support for their arguments. For the American government, this should serve as a call for change. Once the problem has been identified and proven to exist, it is their job to make changes that will mitigate the issue. This analysis was specifically completed on three states to find the county where this problem is the most prevalent. The three states chosen were Washington, to represent the West Coast, Alabama, to represent the South, and New York, to represent the East Coast. 
 
 ## Data Summary 
-[TODO]
+After the conclusion of the analysis, the counties with the greatest proportion of black prisoners were Pierce County in Washington, Baldwin County in Alabama, and Erie County in New York. Among these three counties, Baldwin County was the most disproportionate, with 258.03333 black prisoners per white prisoner. Next was Erie County, with 86.39026. Finally, Pierce County had a proportion of 49.29223 black prisoners per white prisoner. Although these are only the maximum values of the state, the fact that all three states consistently had high values for their proportions shows that the general pattern is that far more black people are incarcerated than white people.
 
-[TODO ... other sections ... See Canvas for details]
+## American Jail Population (1970-2018)
+plot_jail_pop_for_us()
+This plot displays the growth of the jail population in America between the years of 1970 and 2018.
+According to the plot, the American jail population was been consistently growing since 1970. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. There was a brief and minute drop in the early 2010s, but that drop was rapidly recovered, making the overall trend of the American jail population positive. 
 
-_All the very best with your work!_
+## Alabama Jail Population (1970-2018)
+plot_jail_pop_by_states(Alabama)
+This plot displays the growth of the jail population in Alabama between the years of 1970 and 2018. 
+Similar to the general American jail population plot, Alabama’s jail population grew immensely between the years of 1970 and 2018. The plot also displays a disproportionate number of black people being incarcerated compared to other races. This wasn’t as surprising. I chose to analyze Alabama because Alabama is a southern state, which are known for being extremely racist, and even among southern states, Alabama is known to be one of the most racist states. 
+
+## Disproportionate Incarceration of Black People
+View(black_jail_prop)
+This chart displays the proportions of the total jail population that are black people between the ages of 15 and 64 throughout the years. 
+Unsurprisingly, black people between the ages of 15 and 64 represent a large part of the total American jail population. Through this chart, it is clear that in certain states, the issue is even more extreme. In particular, states in the South saw the most disproportionate numbers. Alabama, Texas, Georgia, and more southern states had extremely high rates of black incarceration in comparison to other races.
+
+## Geographical Inequalities in Incarceration
+View(inequality_map)
+This map shows how incarceration rates are dependent on geographical location as well.
+As shown in previous analyses in this report, the southern half of the United States has historically had not just higher rates of incarceration, but also greater proportions of black prisoners than other regions of the US. This map displays these patterns of inequality, as many of the darker regions are in the lower half of the US.
 
