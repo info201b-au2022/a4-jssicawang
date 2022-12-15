@@ -35,14 +35,28 @@ wa_black_jail_prop <- incarceration %>%
   filter(black_jail_prop == max(black_jail_prop)) %>% 
   pull(county)
 
+wa_black_jail_prop_num <- incarceration %>% 
+  select(state, county, black_jail_prop) %>% 
+  drop_na() %>% 
+  filter(state == "WA") %>% 
+  filter(black_jail_prop == max(black_jail_prop)) %>% 
+  pull(black_jail_prop)
+
 # Finding the county with the greatest proportion of black prisoners to total jail population
 # in Alabama
 al_black_jail_prop <- incarceration %>% 
   select(state, county, black_jail_prop) %>% 
   drop_na() %>% 
   filter(state == "AL") %>% 
-  filter(black_jail_prop == max(black_jail_prop))
+  filter(black_jail_prop == max(black_jail_prop)) %>% 
   pull(county)
+
+al_black_jail_prop_num <- incarceration %>% 
+  select(state, county, black_jail_prop) %>% 
+  drop_na() %>% 
+  filter(state == "AL") %>% 
+  filter(black_jail_prop == max(black_jail_prop)) %>% 
+  pull(black_jail_prop)
 
 # Finding the county with the greatest proportion of black prisoners to total jail population
 # in New York
@@ -50,8 +64,15 @@ ny_black_jail_prop <- incarceration %>%
   select(state, county, black_jail_prop) %>% 
   drop_na() %>% 
   filter(state == "NY") %>% 
-  filter(black_jail_prop == max(black_jail_prop))
+  filter(black_jail_prop == max(black_jail_prop)) %>% 
   pull(county)
+
+ny_black_jail_prop_num <- incarceration %>% 
+  select(state, county, black_jail_prop) %>% 
+  drop_na() %>% 
+  filter(state == "NY") %>% 
+  filter(black_jail_prop == max(black_jail_prop)) %>% 
+  pull(black_jail_prop)
 
 ## Section 3  ---- 
 #----------------------------------------------------------------------------#
@@ -78,44 +99,32 @@ plot_jail_pop_for_us <- function()  {
   return(jail_pop_plot)
 } 
 
-plot_jail_pop_for_us()
-
 ## Section 4  ---- 
 #----------------------------------------------------------------------------#
 # Growth of Prison Population by State 
 # Your functions might go here ... <todo:  update comment>
 # See Canvas
 #----------------------------------------------------------------------------#
-TEST <- c("CA", "WA", "NY")
 get_jail_pop_by_states <- function(states) {
   state_jail_pop <- incarceration %>%
-    select(year, state, total_jail_pop) %>%
+    select(total_jail_pop, state, year) %>%
     drop_na() %>%
-    group_by(year) %>% 
+    group_by(year) %>%
     filter(state %in% states)
-  
-  
-  DATA <- state_jail_pop %>% 
-    gather(key = state_pop, value = state, state) %>% 
-    group_by(state, year)
-  return(DATA)   
+  DATA <- state_jail_pop%>%
+    gather(key = jail_pop, value = State, state) %>%
+    group_by(year, State) %>%
+    summarise(jail_pop = sum(total_jail_pop), .groups = "drop")
+  return(DATA)  
 }
 
-STATES <- c("CA", "WA", "MIN")
+STATES <- c("CA", "WA", "AL")
 plot_jail_pop_by_states <- function(states)  {
   jail_pop <- get_jail_pop_by_states(STATES)
   states_jail_pop_plot <- ggplot(data = jail_pop) +
-    geom_line(mapping = aes(x = year, y = total_jail_pop), color = "state") 
+    geom_line(mapping = aes(x = year, y = jail_pop, color = State), size = 0.5)
   return(states_jail_pop_plot)
-  # TODO: Implement this function 
-  # ggplot(get_jail_pop_by_states(), aes(x = year), y = total_jail_pop()) +
-  #   geom_bar(stat = "identity", position = "dodge") +
-  #   labs(title = state + "Jail Population (1970-2018)",
-  #        x = "Year",
-  #        y = "Jail Population") 
-} 
-
-plot_jail_pop_by_states(STATES)
+}
 
 ## Section 5  ---- 
 #----------------------------------------------------------------------------#
@@ -166,7 +175,6 @@ inequality_map <- plot_usmap(
   ) +
   labs(title = "Proportions of Black Prisoners to Total Jail Populations Across America in 2018") +
   theme(legend.position = "right")
-
 
 
 

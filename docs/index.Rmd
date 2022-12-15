@@ -19,24 +19,41 @@ Justice cannot be served until equality is achieved in the way that people are c
 For the people and organizations, such as Black Lives Matter, who have been advocating for this point for years, this analysis serves as support for their arguments. For the American government, this should serve as a call for change. Once the problem has been identified and proven to exist, it is their job to make changes that will mitigate the issue. This analysis was specifically completed on three states to find the county where this problem is the most prevalent. The three states chosen were Washington, to represent the West Coast, Alabama, to represent the South, and New York, to represent the East Coast. 
 
 ## Data Summary 
-After the conclusion of the analysis, the counties with the greatest proportion of black prisoners were Pierce County in Washington, Baldwin County in Alabama, and Erie County in New York. Among these three counties, Baldwin County was the most disproportionate, with 258.03333 black prisoners per white prisoner. Next was Erie County, with 86.39026. Finally, Pierce County had a proportion of 49.29223 black prisoners per white prisoner. Although these are only the maximum values of the state, the fact that all three states consistently had high values for their proportions shows that the general pattern is that far more black people are incarcerated than white people.
+After the conclusion of the analysis, the counties with the greatest proportion of black prisoners were `r wa_black_jail_prop` in Washington, `r al_black_jail_prop` in Alabama, and `r ny_black_jail_prop` in New York. Among these three counties, Macon County was the most disproportionate, with `r al_black_jail_prop_num` black prisoners per white prisoner. Next was New York County, with `r ny_black_jail_prop_num`. Finally, Pierce County had a proportion of `r wa_black_jail_prop_num` black prisoners per white prisoner. Although these are only the maximum values of the state, the fact that all three states consistently had high values for their proportions shows that the general pattern is that far more black people are incarcerated than white people.
 
 ## American Jail Population (1970-2018)
+```{r, echo = FALSE}
 plot_jail_pop_for_us()
-This plot displays the growth of the jail population in America between the years of 1970 and 2018.
-According to the plot, the American jail population consistently grew between 1970 and 2010, when it began to plateau. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. After 2010, the jail population seems to be slowly decreasing.
+```
 
-## Alabama Jail Population (1970-2018)
-plot_jail_pop_by_states(Alabama)
-This plot displays the growth of the jail population in Alabama between the years of 1970 and 2018. 
-Similar to the general American jail population plot, Alabama’s jail population grew immensely between the years of 1970 and 2018. The plot also displays a disproportionate number of black people being incarcerated compared to other races. This wasn’t as surprising. I chose to analyze Alabama because Alabama is a southern state, which are known for being extremely racist, and even among southern states, Alabama is known to be one of the most racist states. 
+_Caption: This plot displays the growth of the jail population in America between the years of 1970 and 2018._ 
+
+According to the plot, the American jail population consistently grew between 1970 and 2010, when it began to plateau. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. After 2010, the jail population seems to be slowly decreasing towards the end of the data in 2018.
+
+## State Jail Population (1970-2018)
+```{r, echo = FALSE}
+plot_jail_pop_by_states(STATES)
+```
+
+_Caption: This plot displays the growth of the jail population in three American states (Washington, California, and Alabama) between the years of 1970 and 2018._ 
+
+Similar to the general American jail population plot, Alabama’s, Washington's, and California's jail populations grew immensely between the years of 1970 and 2018. The plot also displays a disproportionate number of black people being incarcerated compared to other races. This wasn’t surprising. I chose to analyze Alabama because Alabama is a southern state, which are known for being extremely racist, and even among southern states, Alabama is known to be one of the most racist states. California was a little surprising because I expected it to be less racist, but Washington was right around where I expected it.
 
 ## Disproportionate Incarceration of Black People
+```{r, echo = FALSE}
 black_jail_prop_plot
-This bar plot displays the proportions of the total jail population that were black people throughout the years. Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even ,ore prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races.
+```
+
+_Caption: This bar plot displays the proportions of the total jail population that were black people throughout the years._ 
+
+Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even more prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races. With this analysis, I wanted to answer the question of whether certain areas of the United States had higher proportions of black prisoners. While I expected the answer to be yes, the data seems to show that the answer is no. There are states all over the United States that have proportions of black prisoners.
 
 ## Geographical Inequalities in Incarceration
+```{r, echo = FALSE}
 inequality_map
-This map shows how incarceration rates are dependent on geographical location as well.
-As shown in previous analyses in this report, the southern half of the United States has historically had not just higher rates of incarceration, but also greater proportions of black prisoners than other regions of the US. This map displays these patterns of inequality, as many of the darker regions are in the lower half of the US.
+```
+
+_Caption: This map shows how incarceration rates are dependent on geographical location as well._ 
+
+The southern half of the United States has historically had not just higher rates of incarceration, but also greater proportions of black prisoners than other regions of the US. This map displays these patterns of inequality, as many of the darker regions are in the lower half of the US. However, as previous analyses have shown, this trend also occurs all over the United States, and not just in the lower half.
 
