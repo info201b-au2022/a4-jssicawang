@@ -1,5 +1,5 @@
 ---
-title: "Revealing Patterns of Inequalities in the American Jail System"
+title: "Revealing Patterns of Inequality in the American Jail System"
 author: "Jessica Wang"
 date: '2022-11-21'
 output: html_document
@@ -12,7 +12,7 @@ source("../source/analysis.R")
 ```
 
 ## Abstract 
-Throughout American history, incarceration has been a topic of much discourse. Many people have problems with the way the system is set up, and numerous efforts have been made throughout the years to correct these problems. At the same time, reform will not be enough until societal prejudices are removed. 
+Throughout American history, incarceration has been a topic of much discourse. Many people are frustrated with the way the system is set up, and numerous efforts have been made throughout the years to correct these problems. At the same time, reform will not be enough until societal prejudices are removed. 
 
 ## Introduction 
 Justice cannot be served until equality is achieved in the way that people are convicted of crimes. Studies show that black people are, on average, five times more likely to be arrested than white people. This number is supported by the following analysis of decades of incarceration trends data gathered by the Vera Institute, as throughout the years, black people are consistently incarcerated at a higher rate than white people.
@@ -24,7 +24,7 @@ After the conclusion of the analysis, the counties with the greatest proportion 
 ## American Jail Population (1970-2018)
 plot_jail_pop_for_us()
 This plot displays the growth of the jail population in America between the years of 1970 and 2018.
-According to the plot, the American jail population was been consistently growing since 1970. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. There was a brief and minute drop in the early 2010s, but that drop was rapidly recovered, making the overall trend of the American jail population positive. 
+According to the plot, the American jail population consistently grew between 1970 and 2010, when it began to plateau. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. After 2010, the jail population seems to be slowly decreasing.
 
 ## Alabama Jail Population (1970-2018)
 plot_jail_pop_by_states(Alabama)
@@ -32,12 +32,11 @@ This plot displays the growth of the jail population in Alabama between the year
 Similar to the general American jail population plot, Alabama’s jail population grew immensely between the years of 1970 and 2018. The plot also displays a disproportionate number of black people being incarcerated compared to other races. This wasn’t as surprising. I chose to analyze Alabama because Alabama is a southern state, which are known for being extremely racist, and even among southern states, Alabama is known to be one of the most racist states. 
 
 ## Disproportionate Incarceration of Black People
-View(black_jail_prop)
-This chart displays the proportions of the total jail population that are black people between the ages of 15 and 64 throughout the years. 
-Unsurprisingly, black people between the ages of 15 and 64 represent a large part of the total American jail population. Through this chart, it is clear that in certain states, the issue is even more extreme. In particular, states in the South saw the most disproportionate numbers. Alabama, Texas, Georgia, and more southern states had extremely high rates of black incarceration in comparison to other races.
+black_jail_prop_plot
+This bar plot displays the proportions of the total jail population that were black people throughout the years. Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even ,ore prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races.
 
 ## Geographical Inequalities in Incarceration
-View(inequality_map)
+inequality_map
 This map shows how incarceration rates are dependent on geographical location as well.
 As shown in previous analyses in this report, the southern half of the United States has historically had not just higher rates of incarceration, but also greater proportions of black prisoners than other regions of the US. This map displays these patterns of inequality, as many of the darker regions are in the lower half of the US.
 

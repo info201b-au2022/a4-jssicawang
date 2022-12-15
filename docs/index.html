@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Your Name" />
+<meta name="Jessica Wang" content="Revealing Patterns of Inequality in the American Jail System" />
 
-<meta name="date" content="2022-11-01" />
+<meta name="date" content="2022-11-21" />
 
-<title>Your A4 Report Title (TODO: Revise title)</title>
+<title>Revealing Patterns of Ineqality in the American Jail System</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,45 +363,45 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Your A4 Report Title (TODO: Revise
-title)</h1>
-<h4 class="author">Your Name</h4>
-<h4 class="date">2022-11-01</h4>
+<h1 class="title toc-ignore">Revealing Patterns of Inequality in the American Jail System</h1>
+<h4 class="author">Jessica Wang</h4>
+<h4 class="date">2022-11-21</h4>
 
 </div>
 
 
 <div id="abstract" class="section level2">
 <h2>Abstract</h2>
-<p>[TODO: Include a short abstract (about 50 words)]</p>
+<p>Throughout American history, incarceration has been a topic of much discourse. Many people are frustrated with the way the system is set up, and numerous efforts have been made throughout the years to correct these problems. At the same time, reform will not be enough until societal prejudices are removed. </p>
 </div>
-<div id="test-todo-remove-before-submission" class="section level1">
-<h1>Test (TODO: Remove before submission!!)</h1>
-<p>As you know, this is a markdown report. The <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R
-Markdown Cheatsheet</a> is <strong>useful!</strong></p>
-<ul>
-<li>Here’s a test of a dynamic variable. Say <strong>“Hello
-world!!!</strong></li>
-<li>Here’s another test. A vector of numbers: 1, 2, 3, 4, 5.</li>
-</ul>
-<p>Recall that <em>{r echo=TRUE}</em> can be used to display the code,
-which is very useful when developing and debugging a report. Here’s an
-example:</p>
-<pre class="r"><code>num &lt;- 5
-sum &lt;- sum(test_query2(num))
-print(sum)</code></pre>
-<pre><code>## [1] 15</code></pre>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>[TODO]</p>
+<p>Justice cannot be served until equality is achieved in the way that people are convicted of crimes. Studies show that black people are, on average, five times more likely to be arrested than white people. This number is supported by the following analysis of decades of incarceration trends data gathered by the Vera Institute, as throughout the years, black people are consistently incarcerated at a higher rate than white people.
+For the people and organizations, such as Black Lives Matter, who have been advocating for this point for years, this analysis serves as support for their arguments. For the American government, this should serve as a call for change. Once the problem has been identified and proven to exist, it is their job to make changes that will mitigate the issue. This analysis was specifically completed on three states to find the county where this problem is the most prevalent. The three states chosen were Washington, to represent the West Coast, Alabama, to represent the South, and New York, to represent the East Coast. </p>
 </div>
 <div id="data-summary" class="section level2">
 <h2>Data Summary</h2>
-<p>[TODO]</p>
-<p>[TODO … other sections … See Canvas for details]</p>
-<p><em>All the very best with your work!</em></p>
+<div id="american-jail-pop" class="section level2">
+<h3>American Jail Population (1970-2018)</h3>
+```{r, echo = FALSE} plot_jail_pop_for_us()```
+<p>This plot displays the growth of the jail population in America between the years of 1970 and 2018.
+According to the plot, the American jail population consistently grew between 1970 and 2010, when it began to plateau. Specifically, the jail population grew the most between 1980 and 2000, as there is a sharp increase in the chart then. After 2010, the jail population seems to be slowly decreasing. </p>
 </div>
+<div id="disprop-incarceration-of-black-people" class="section level2">
+<h3>Disproportionate Incarceration of Black People</h3>
+`r black_jail_prop_plot`
+<p>This bar plot displays the proportions of the total jail population that were black people throughout the years. Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even ,ore prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races. </p>
 </div>
+<div id="geographial-inequalities" class="section level2">
+<h3>Geographical Inequalities in Incarceration</h3>
+```{r, echo = FALSE}
+inequality_map
+```
+<p>This map shows how incarceration rates are dependent on geographical location as well.
+As shown in previous analyses in this report, the southern half of the United States has historically had not just higher rates of incarceration, but also greater proportions of black prisoners than other regions of the US. This map displays these patterns of inequality, as many of the darker regions are in the lower half of the US. </p>
+</div>
+
+
 
 
 
