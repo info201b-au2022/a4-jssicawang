@@ -46,7 +46,7 @@ black_jail_prop_plot
 
 _Caption: This bar plot displays the proportions of the total jail population that were black people throughout the years._ 
 
-Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even more prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races. With this analysis, I wanted to answer the question of whether certain areas of the United States had higher proportions of black prisoners. While I expected the answer to be yes, the data seems to show that the answer is no. There are states all over the United States that have proportions of black prisoners.
+Unsurprisingly, black people represent a disproportionately large part of the total American jail population. Through this plot, it is clear that in certian states, the issue is even more prevalent. In particular, the darker states in the plot, such as California, saw the most extreme numbers. These states had extremely high rates of black incarceration in comparison to other races. With this analysis, I wanted to answer the question of whether certain regions of the United States had higher proportions of black prisoners. While I expected the answer to be yes, especially for the deep South, the data seems to show that the answer is no. There are states all over the United States that have high proportions of black prisoners.
 
 ## Geographical Inequalities in Incarceration
 ```{r, echo = FALSE}

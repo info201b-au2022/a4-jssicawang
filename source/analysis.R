@@ -122,6 +122,7 @@ STATES <- c("CA", "WA", "AL")
 plot_jail_pop_by_states <- function(states)  {
   jail_pop <- get_jail_pop_by_states(STATES)
   states_jail_pop_plot <- ggplot(data = jail_pop) +
+    ggtitle ("State Prison Population Growth (1970-2018)") +
     geom_line(mapping = aes(x = year, y = jail_pop, color = State), size = 0.5)
   return(states_jail_pop_plot)
 }
@@ -141,6 +142,7 @@ black_jail_prop_new <- incarceration %>%
 
 black_jail_prop_plot <- ggplot(
   black_jail_prop_new, aes(x = state, y = black_jail_prop_new)) + 
+  ggtitle ("Proportion of Black Prisoners in American Jails (1970-2018)") +
   geom_bar(stat = "identity") +
   coord_flip()
 
